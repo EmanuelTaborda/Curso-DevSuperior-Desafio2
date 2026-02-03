@@ -48,7 +48,7 @@ Este diagrama define as entidades principais, seus atributos e os relacionamento
 
 Para validação do modelo, o projeto realiza o **seeding automático do banco de dados**, conforme o diagrama de objetos abaixo:
 
-![Diagrama de Objetos](docs/diagrama-objetos.png)
+![Diagrama de Objetos](docs/Diagrama-objetos.png)
 
 Os dados inseridos representam um cenário realista de participantes inscritos em atividades, com categorias e blocos de horários distintos.
 
