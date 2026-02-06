@@ -1,65 +1,91 @@
-# Sistema Evento – Modelo de Domínio com Spring Boot e JPA
+# 🎓 Sistema Evento — Prática de Modelagem de Domínio com Spring Boot e JPA
 
-Projeto desenvolvido em **Java com Spring Boot**, com foco na modelagem de domínio, mapeamento objeto-relacional (ORM) e persistência de dados utilizando **JPA/Hibernate** e **banco de dados H2**.
+Projeto desenvolvido em **Java com Spring Boot** com o objetivo de praticar modelagem de domínio, mapeamento objeto-relacional (ORM) e persistência de dados utilizando **Spring Data JPA e Hibernate**.
 
-O sistema simula o gerenciamento de atividades de um **evento acadêmico**, permitindo o cadastro de participantes, atividades, categorias e blocos de horários, conforme um modelo conceitual previamente definido.
-
----
-
-## 🎯 Objetivo do Projeto
-
-Este projeto foi desenvolvido como parte de um desafio técnico-acadêmico com o objetivo de demonstrar:
-
-- Modelagem correta de domínio
-- Uso prático de **ORM com JPA**
-- Implementação de relacionamentos complexos entre entidades
-- Criação automática do schema do banco de dados
-- Seeding de dados conforme especificação
-- Organização de um projeto Spring Boot seguindo boas práticas
+O sistema simula o gerenciamento de atividades de um evento acadêmico, servindo como um exercício prático para aplicar conceitos de arquitetura, modelagem orientada a objetos e relacionamento entre entidades.
 
 ---
 
-## 🧩 Contexto do Sistema
+## 👨‍💻 Sobre o Projeto
 
-O sistema **EVENTO** é responsável por gerenciar as informações de um evento acadêmico, onde existem diferentes tipos de atividades, como cursos, oficinas e palestras.
+O sistema simula um cenário onde é possível gerenciar:
 
-Cada atividade possui:
-- Nome
-- Descrição
-- Preço
-- Categoria
-- Um ou mais blocos de horário (com data, início e fim)
+- Participantes
+- Atividades (cursos, oficinas, palestras, etc.)
+- Categorias de atividades
+- Blocos de horários
 
-Os participantes podem se inscrever em várias atividades, e cada atividade pode conter vários participantes.
+Regras modeladas:
+
+- Um participante pode se inscrever em várias atividades
+- Uma atividade pode possuir vários participantes
+- Cada atividade pertence a uma categoria
+- Uma atividade pode possuir múltiplos blocos de horário (datas e intervalos)
+
+O foco principal foi a correta representação dessas relações no modelo de domínio.
 
 ---
 
-## 🗂️ Modelo Conceitual (Diagrama de Classes)
+## 🧩 Modelagem de Domínio
 
-Abaixo está o **diagrama de classes** que representa o modelo conceitual do sistema e orientou toda a implementação do projeto:
+A implementação foi guiada por modelagem UML, utilizada como base para estruturação das entidades e seus relacionamentos.
+
+### 📊 Diagrama de Classes
 
 ![Diagrama de Classes](docs/Diagrama-classes.png)
 
-Este diagrama define as entidades principais, seus atributos e os relacionamentos, incluindo cardinalidades e associações.
+O diagrama apresenta as entidades principais e suas associações, refletidas diretamente no mapeamento JPA.
 
 ---
 
-## 🧪 Seeding de Dados (Diagrama de Objetos)
+## 🧪 Seeding de Dados
 
-Para validação do modelo, o projeto realiza o **seeding automático do banco de dados**, conforme o diagrama de objetos abaixo:
+Para validação do modelo e facilitar testes, o projeto inclui seeding automático da base de dados.
+
+### 📊 Diagrama de Objetos
 
 ![Diagrama de Objetos](docs/Diagrama-objetos.png)
 
-Os dados inseridos representam um cenário realista de participantes inscritos em atividades, com categorias e blocos de horários distintos.
+Os dados simulam um cenário coerente de participantes e atividades em um evento acadêmico.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🏗️ Arquitetura do Projeto
 
-- **Java**
-- **Spring Boot**
-- **Spring Data JPA**
-- **Hibernate**
-- **Banco de Dados H2**
-- **Maven**
-- **H2 Console**
+Organização simples em camadas para separação de responsabilidades:
+
+- **Domain**
+    - Entidades e modelagem do negócio
+- **Repository**
+    - Interfaces de acesso a dados com Spring Data JPA
+- **Config**
+    - Configuração e carga inicial (seeding) da base
+
+O objetivo foi exercitar organização básica de um projeto Spring Boot.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Java
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- Banco H2 (em memória)
+- Maven
+
+---
+
+## 🧠 Conceitos Praticados
+
+- Modelagem de domínio orientada a objetos
+- Relacionamentos JPA:
+    - Many-to-Many
+    - One-to-Many
+    - Many-to-One
+- ORM com Hibernate
+- Geração automática de schema
+- Seeding de dados
+- Organização básica em camadas
+
+---
